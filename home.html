@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chasse au Trésor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="container">
+            <h1>Chasse au Trésor</h1>
+            <div id="teamSelection">
+                <h2>Sélectionnez votre équipe</h2>
+                <form id="teamForm">
+                    <label for="teamNumber">Numéro d'équipe :</label>
+                    <input type="text" id="teamNumber" name="teamNumber" required>
+                    <button type="submit">Rejoindre l'équipe</button>
+                    <p id="teamError" class="error"></p> <!-- Affichage de l'erreur de sélection d'équipe -->
+                </form>
+            </div>
+            <div id="teamInfo" style="display: none;">
+                <h2 id="teamInfoText"></h2>
+                <button id="changeTeamButton">Modifier l'équipe</button>
+            </div>
+            <div id="treasureForm" style="display: none;">
+                <h2>Choisissez votre indice</h2>
+                <form id="indiceForm">
+                    <!-- Ajout de l'identifiant "indiceForm" pour le formulaire -->
+                    <label for="code">Code :</label>
+                    <input type="text" id="code" name="code" required>
+                    <button type="submit">Trouver l'indice</button>
+                </form>
+            </div>
+            <div id="hint"></div>
+            <div id="teamNumberHidden" style="display: none;"></div> <!-- Div pour stocker le numéro d'équipe -->
+        </div>
+
+        <div id="Timeline" class="timeline-container" style="display: none;">
+            <div class="timeline">
+                <div id="TimelineIndice1" class="timeline-container primary" style="display: none;">
+                    <div class="timeline-icon">
+                        <i class="far fa-grin-wink"></i>
+                    </div>
+                    <div class="timeline-body">
+                        <h4 class="timeline-title"><span class="badge">Indice 1</span></h4>
+                        <p id="TexteIndice1">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <p class="timeline-subtitle"></p>
+                    </div>
+                </div>
+                <div id="TimelineIndice2" class="timeline-container danger" style="display: none;">
+                    <div class="timeline-icon">
+                        <i class="far fa-grin-hearts"></i>
+                    </div>
+                    <div class="timeline-body">
+                        <h4 class="timeline-title"><span class="badge">Indice 2</span></h4>
+                        <p id="TexteIndice2">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <p class="timeline-subtitle"></p>
+                    </div>
+                </div>
+                <div id="TimelineIndice3" class="timeline-container success" style="display: none;">
+                    <div class="timeline-icon">
+                        <i class="far fa-grin-tears"></i>
+                    </div>
+                    <div class="timeline-body">
+                        <h4 class="timeline-title"><span class="badge">Indice 3</span></h4>
+                        <p id="TexteIndice3">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <p class="timeline-subtitle"></p>
+                    </div>
+                </div>
+                <div id="TimelineIndice4" class="timeline-container warning" style="display: none;">
+                    <div class="timeline-icon">
+                        <i class="far fa-grimace"></i>
+                    </div>
+                    <div class="timeline-body">
+                        <h4 class="timeline-title"><span class="badge">Indice 4</span></h4>
+                        <p id="TexteIndice4">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <p class="timeline-subtitle"></p>
+                    </div>
+                </div>
+                <div class="timeline-container info" style="display: none;">
+                    <div class="timeline-icon">
+                        <i class="far fa-grin"></i>
+                    </div>
+                    <div class="timeline-body">
+                        <h4 class="timeline-title"><span class="badge">Info</span></h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <p class="timeline-subtitle">4 Days Ago</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
