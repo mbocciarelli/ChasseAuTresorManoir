@@ -1,28 +1,28 @@
 ﻿// Dictionnaire contenant les équipes et leurs indices
 var hints = {
     "1": [
-        { code: "1", nextCode: "2", hint: "Votre prochain nombre est 42. Indice supplémentaire : Un objet précieux souvent associé à la sagesse." },
-        { code: "2", nextCode: "3", hint: "Votre prochain nombre est 17. Indice supplémentaire : Il est souvent utilisé pour représenter l'âge de la majorité." },
-        { code: "3", nextCode: "4", hint: "Votre prochain nombre est 99. Indice supplémentaire : Il est souvent utilisé pour représenter un prix maximal." },
-        { code: "4", nextCode: "none", hint: "Votre prochain nombre est 77. Indice supplémentaire : Il a six faces et peut être jeté pour obtenir des nombres aléatoires." }
+        { code: "1", nextCode: "2", hint: "Votre prochain nombre est 42. \nIndice supplémentaire : Un objet précieux souvent associé à la sagesse." },
+        { code: "2", nextCode: "3", hint: "Votre prochain nombre est 17. \nIndice supplémentaire : Il est souvent utilisé pour représenter l'âge de la majorité." },
+        { code: "3", nextCode: "4", hint: "Votre prochain nombre est 99. \nIndice supplémentaire : Il est souvent utilisé pour représenter un prix maximal." },
+        { code: "4", nextCode: "none", hint: "Votre prochain nombre est 77. \nIndice supplémentaire : Il a six faces et peut être jeté pour obtenir des nombres aléatoires." }
     ],
     "2": [
-        { code: "1", nextCode: "2", hint: "Votre prochain nombre est 99. Indice supplémentaire : Il est souvent utilisé pour représenter un prix maximal." },
-        { code: "2", nextCode: "3", hint: "Votre prochain nombre est 77. Indice supplémentaire : Il a six faces et peut être jeté pour obtenir des nombres aléatoires." },
-        { code: "3", nextCode: "4", hint: "Votre prochain nombre est 42. Indice supplémentaire : Un objet précieux souvent associé à la sagesse." },
-        { code: "4", nextCode: "none", hint: "Votre prochain nombre est 17. Indice supplémentaire : Il est souvent utilisé pour représenter l'âge de la majorité." }
+        { code: "1", nextCode: "2", hint: "Votre prochain nombre est 99. \nIndice supplémentaire : Il est souvent utilisé pour représenter un prix maximal." },
+        { code: "2", nextCode: "3", hint: "Votre prochain nombre est 77. \nIndice supplémentaire : Il a six faces et peut être jeté pour obtenir des nombres aléatoires." },
+        { code: "3", nextCode: "4", hint: "Votre prochain nombre est 42. \nIndice supplémentaire : Un objet précieux souvent associé à la sagesse." },
+        { code: "4", nextCode: "none", hint: "Votre prochain nombre est 17. \nIndice supplémentaire : Il est souvent utilisé pour représenter l'âge de la majorité." }
     ],
     "3": [
-        { code: "1", nextCode: "2", hint: "Votre prochain nombre est 17. Indice supplémentaire : Il est souvent utilisé pour représenter l'âge de la majorité." },
-        { code: "2", nextCode: "3", hint: "Votre prochain nombre est 77. Indice supplémentaire : Il a six faces et peut être jeté pour obtenir des nombres aléatoires." },
-        { code: "3", nextCode: "4", hint: "Votre prochain nombre est 99. Indice supplémentaire : Il est souvent utilisé pour représenter un prix maximal." },
-        { code: "4", nextCode: "none", hint: "Votre prochain nombre est 42. Indice supplémentaire : Un objet précieux souvent associé à la sagesse." }
+        { code: "1", nextCode: "2", hint: "Votre prochain nombre est 17. \nIndice supplémentaire : Il est souvent utilisé pour représenter l'âge de la majorité." },
+        { code: "2", nextCode: "3", hint: "Votre prochain nombre est 77. \nIndice supplémentaire : Il a six faces et peut être jeté pour obtenir des nombres aléatoires." },
+        { code: "3", nextCode: "4", hint: "Votre prochain nombre est 99. \nIndice supplémentaire : Il est souvent utilisé pour représenter un prix maximal." },
+        { code: "4", nextCode: "none", hint: "Votre prochain nombre est 42. \nIndice supplémentaire : Un objet précieux souvent associé à la sagesse." }
     ],
     "4": [
-        { code: "1", nextCode: "2", hint: "Votre prochain nombre est 99. Indice supplémentaire : Il est souvent utilisé pour représenter un prix maximal." },
-        { code: "2", nextCode: "3", hint: "Votre prochain nombre est 17. Indice supplémentaire : Il est souvent utilisé pour représenter l'âge de la majorité." },
-        { code: "3", nextCode: "4", hint: "Votre prochain nombre est 42. Indice supplémentaire : Un objet précieux souvent associé à la sagesse." },
-        { code: "4", nextCode: "none", hint: "Votre prochain nombre est 77. Indice supplémentaire : Il a six faces et peut être jeté pour obtenir des nombres aléatoires." }
+        { code: "1", nextCode: "2", hint: "Votre prochain nombre est 99. \nIndice supplémentaire : Il est souvent utilisé pour représenter un prix maximal." },
+        { code: "2", nextCode: "3", hint: "Votre prochain nombre est 17. \nIndice supplémentaire : Il est souvent utilisé pour représenter l'âge de la majorité." },
+        { code: "3", nextCode: "4", hint: "Votre prochain nombre est 42. \nIndice supplémentaire : Un objet précieux souvent associé à la sagesse." },
+        { code: "4", nextCode: "none", hint: "Votre prochain nombre est 77. \nIndice supplémentaire : Il a six faces et peut être jeté pour obtenir des nombres aléatoires." }
     ]
 };
 
@@ -149,4 +149,23 @@ document.getElementById('indiceForm').addEventListener('submit', function(e) {
     } else {
         document.getElementById('hint').innerText = "Code incorrect. Veuillez réessayer.";
     }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const images = document.querySelectorAll('.gallery img');
+    const overlay = document.getElementById('overlay');
+    const overlayImage = document.getElementById('overlay-image');
+    const overlayText = document.getElementById('overlay-text');
+
+    images.forEach(image => {
+        image.addEventListener('click', () => {
+            overlayImage.src = image.src;
+            overlayText.textContent = image.getAttribute('data-name');
+            overlay.classList.add('show');
+        });
+    });
+
+    overlay.addEventListener('click', () => {
+        overlay.classList.remove('show');
+    });
 });
