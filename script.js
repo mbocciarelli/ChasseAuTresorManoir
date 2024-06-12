@@ -28,46 +28,52 @@
 
 var teams = {
     "1" : [
-        { previous : "null", code : "482751", next : "139468" },
-        { previous : "", code : "", next : "" },
-        { previous : "", code : "", next : "" },
-        { previous : "", code : "", next : "null" }
+        { code : "139468", next : "482751" },
+        { code : "482751", next : "413682" },
+        { code : "413682", next : "436759" },
+        { code : "436759", next : "null" }
     ],
     "2" : [
-        { previous : "null", code : "482751", next : "139468" },
-        { previous : "", code : "", next : "" },
-        { previous : "", code : "", next : "" },
-        { previous : "", code : "", next : "null" }
+        { code : "735821", next : "396528" },
+        { code : "396528", next : "297514" },
+        { code : "297514", next : "139468" },
+        { code : "139468", next : "null" }
     ],
     "3" : [
-        { previous : "null", code : "482751", next : "139468" },
-        { previous : "", code : "", next : "" },
-        { previous : "", code : "", next : "" },
-        { previous : "", code : "", next : "null" }
+        { code : "549317", next : "572936" },
+        { code : "572936", next : "821745" },
+        { code : "821745", next : "678142" },
+        { code : "678142", next : "null" }
     ],
     "4" : [
-        { previous : "null", code : "482751", next : "139468" },
-        { previous : "", code : "", next : "" },
-        { previous : "", code : "", next : "" },
-        { previous : "", code : "", next : "null" }
+        { code : "268495", next : "396528" },
+        { code : "396528", next : "657293" },
+        { code : "657293", next : "413682" },
+        { code : "413682", next : "null" }
     ]
 }
 
 var hints = {
-    "482751" : "Je suis unique mais à la fois plusieurs. Malgré le temps qui passe, je reviens toujours à mes racines. J'aurais 20 ans cette année.",
-    "139468" : "L'obscurité de la nuit grandissant, mes manettes me permettent d'obtenir une part de lumière.",
-    "657293" : "Ma chute fut causée par un typhon causant 2 morts mais je me suis transformée pour soutenir de nouvelle fondation.",
-    "821745" : "De passage à St-Eulalie-en-borne pour refaire la piéta de l'Eglise et pour remercier de l'hébergement au manoir, j'ai fait fleurir mon art sur mon œuvre.",
-    "396528" : "Fait de pierre et de briques, j'accueillais le bois pour mon confort thermique et digestif.",
-    "572936" : "Symbole de noblesse alors que mes créateurs ne l'étaient pas.",
-    "413682" : "Co-fondateur de la plus grande organisation d'aide au monde et ancien résident du manoir, ma seule trace n'est présent que sur un bout de papier.",
-    "268495" : "Je trône fièrement au-dessus du plus fréquent point de passage du manoir. Normal, je fus le 1er propriétaire.",
-    "735821" : "Nous célébrons ce week-end l'anniversaire d'une personne formidable, il faut bien que sa génitrice le soit tout autant.",
-    "549317" : "Je suis dessiné en compagnie de mes 2 acolytes. Merci pour ce tableau, Frederick Blaimont.",
-    "678142" : "Je suis caché en petit au milieu de la photo avec toute mon école. Bonne chance pour me trouver.",
-    "854239" : "Ma balade au plus proche des Humains m'a coûté la vie.",
-    "297514" : "Personnage important ayant vécu au manoir, ma photo rend hommage à mes 67 ans de vie.",
-    "436759" : "On m'a décerné le seul ordre impérial encore remis de nos jours : Les Palmes Académiques."
+/*1 */"482751" : "Je suis unique mais à la fois plusieurs. Malgré le temps qui passe, je reviens toujours à mes racines. J'aurais 20 ans cette année.",
+/*2 */"139468" : "L'obscurité de la nuit grandissant, mes manettes me permettent d'obtenir une part de lumière.",
+/*3 */"657293" : "Ma chute fut causée par un typhon causant 2 morts mais je me suis transformée pour soutenir de nouvelle fondation.",
+/*4 */"821745" : "De passage à St-Eulalie-en-borne pour refaire la piéta de l'Eglise et pour remercier de l'hébergement au manoir, j'ai fait fleurir mon art sur mon œuvre.",
+/*11*/"396528" : "Fait de pierre et de briques, j'accueillais le bois pour mon confort thermique et digestif.",
+/*12*/"572936" : "Symbole de noblesse alors que mes créateurs ne l'étaient pas.",
+/*14*/"413682" : "Co-fondateur de la plus grande organisation d'aide au monde et ancien résident du manoir, ma seule trace n'est présent que sur un bout de papier.",
+/*6 */"268495" : "Je trône fièrement au-dessus du plus fréquent point de passage du manoir. Normal, je fus le 1er propriétaire.",
+/*7 */"735821" : "Nous célébrons ce week-end l'anniversaire d'une personne formidable, il faut bien que sa génitrice le soit tout autant.",
+/*8 */"549317" : "Je suis dessiné en compagnie de mes 2 acolytes. Merci pour ce tableau, Frederick Blaimont.",
+/*9 */"678142" : "Je suis caché en petit au milieu de la photo avec toute mon école. Bonne chance pour me trouver.",
+/*10*/"854239" : "Ma balade au plus proche des Humains m'a coûté la vie.",
+/*13*/"297514" : "Personnage important ayant vécu au manoir, ma photo rend hommage à mes 67 ans de vie.",
+/*5 */"436759" : "On m'a décerné le seul ordre impérial encore remis de nos jours : Les Palmes Académiques.",
+
+/*    Phrase Finale   */
+    "" : "",
+    "" : "",
+    "" : "",
+    "" : ""
 }
 
 var nextCode = 0;
@@ -127,6 +133,7 @@ document.getElementById('changeTeamButton').addEventListener('click', function (
     document.getElementById('TimelineIndice2').style.display = 'none';
     document.getElementById('TimelineIndice3').style.display = 'none';
     document.getElementById('TimelineIndice4').style.display = 'none';
+    document.getElementById('TimelineIndice5').style.display = 'none';
     document.getElementById('Timeline').style.display = 'none';
 
     nextCode = 0;
@@ -136,8 +143,31 @@ document.getElementById('indiceForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
     var code = document.getElementById('code').value;
+    var teamNumber = document.getElementById('teamNumber').value;
 
     var timelineDisplay = document.getElementById('Timeline').style.display;
+
+    if(code == "0" && nextCode == "0")
+    {
+        switch(teamNumber)
+        {
+            case "1":
+                code = "139468";
+                break;
+        
+            case "2":
+                code = "735821";
+                break;
+        
+            case "3":
+                code = "549317";
+                break;
+
+            case "4":
+                code = "268495";
+                break;
+        }
+    }
 
     // Récupère l'indice
     var hint = getHint(code);
@@ -163,6 +193,7 @@ document.getElementById('indiceForm').addEventListener('submit', function(e) {
         var numberTimeline2 = document.getElementById('TimelineIndice2').style.display;
         var numberTimeline3 = document.getElementById('TimelineIndice3').style.display;
         var numberTimeline4 = document.getElementById('TimelineIndice4').style.display;
+        var numberTimeline5 = document.getElementById('TimelineIndice5').style.display;
 
         if(numberTimeline1 == 'none')
         {
@@ -180,6 +211,11 @@ document.getElementById('indiceForm').addEventListener('submit', function(e) {
             document.getElementById('TexteIndice3').innerText = hint;
         }
         else if(numberTimeline4 == 'none')
+        {
+            document.getElementById('TimelineIndice4').style.display = 'block';
+            document.getElementById('TexteIndice4').innerText = hint;
+        }
+        else if(numberTimeline5 == 'none')
         {
             document.getElementById('TimelineIndice4').style.display = 'block';
             document.getElementById('TexteIndice4').innerText = hint;
