@@ -222,7 +222,7 @@ document.getElementById('indiceForm').addEventListener('submit', function(e) {
         else if(numberTimeline5 == 'none')
         {
             document.getElementById('TimelineIndice5').style.display = 'block';
-            document.getElementById('TexteIndice5').innerText = hint;
+            document.getElementById('TexteIndice5').innerText = "Rapporte-moi au plus vite cette phrase : " + hint;
         }
 
         
