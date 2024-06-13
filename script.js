@@ -31,25 +31,29 @@ var teams = {
         { code : "139468", next : "482751" },
         { code : "482751", next : "413682" },
         { code : "413682", next : "436759" },
-        { code : "436759", next : "null" }
+        { code : "436759", next : "192637" },
+        { code : "192637", next : "null" }
     ],
     "2" : [
         { code : "735821", next : "396528" },
         { code : "396528", next : "297514" },
         { code : "297514", next : "139468" },
-        { code : "139468", next : "null" }
+        { code : "139468", next : "485920" },
+        { code : "485920", next : "null" }
     ],
     "3" : [
         { code : "549317", next : "572936" },
         { code : "572936", next : "821745" },
         { code : "821745", next : "678142" },
-        { code : "678142", next : "null" }
+        { code : "678142", next : "374815" },
+        { code : "374815", next : "null" }
     ],
     "4" : [
         { code : "268495", next : "396528" },
         { code : "396528", next : "657293" },
         { code : "657293", next : "413682" },
-        { code : "413682", next : "null" }
+        { code : "413682", next : "629481" },
+        { code : "629481", next : "null" }
     ]
 }
 
@@ -70,10 +74,10 @@ var hints = {
 /*5 */"436759" : "On m'a décerné le seul ordre impérial encore remis de nos jours : Les Palmes Académiques.",
 
 /*    Phrase Finale   */
-    "" : "",
-    "" : "",
-    "" : "",
-    "" : ""
+    "192637" : "J'ai le rire d'une mouette !",
+    "485920" : "J'ai 23 ans mais 70 ressentis !",
+    "374815" : "Adeline, c'est la meilleure !",
+    "629481" : "A fond le crossfit !"
 }
 
 var nextCode = 0;
