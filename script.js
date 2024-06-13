@@ -221,8 +221,8 @@ document.getElementById('indiceForm').addEventListener('submit', function(e) {
         }
         else if(numberTimeline5 == 'none')
         {
-            document.getElementById('TimelineIndice4').style.display = 'block';
-            document.getElementById('TexteIndice4').innerText = hint;
+            document.getElementById('TimelineIndice5').style.display = 'block';
+            document.getElementById('TexteIndice5').innerText = hint;
         }
 
         
