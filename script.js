@@ -74,10 +74,10 @@ var hints = {
 /*5 */"436759" : "On m'a décerné le seul ordre impérial encore remis de nos jours : Les Palmes Académiques.",
 
 /*    Phrase Finale   */
-    "192637" : "J'ai le rire d'une mouette !",
-    "485920" : "J'ai 23 ans mais 70 ressentis !",
-    "374815" : "Adeline, c'est la meilleure !",
-    "629481" : "A fond le crossfit !"
+    "192637" : "Rapporte-moi au plus vite cette phrase : J'ai le rire d'une mouette !",
+    "485920" : "Rapporte-moi au plus vite cette phrase : J'ai 23 ans mais 70 ressentis !",
+    "374815" : "Rapporte-moi au plus vite cette phrase : Adeline, c'est la meilleure !",
+    "629481" : "Rapporte-moi au plus vite cette phrase : A fond le crossfit !"
 }
 
 var nextCode = 0;
@@ -222,7 +222,7 @@ document.getElementById('indiceForm').addEventListener('submit', function(e) {
         else if(numberTimeline5 == 'none')
         {
             document.getElementById('TimelineIndice5').style.display = 'block';
-            document.getElementById('TexteIndice5').innerText = "Rapporte-moi au plus vite cette phrase : " + hint;
+            document.getElementById('TexteIndice5').innerText = hint;
         }
 
         
